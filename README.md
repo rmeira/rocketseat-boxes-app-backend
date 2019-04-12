@@ -1,0 +1,1 @@
+## Semana Oministack [Rocketseat](https://rocketseat.com.br)
