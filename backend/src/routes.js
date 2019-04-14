@@ -1,8 +1,16 @@
-const express = require('express');
-const routes = express.routes();
+const express = require("express");
+const multer = require("multer");
+const multerConfig = require("./config/multer");
 
-routes.get('/', (req, res) => {
-    return res.send("Hello World");
-})
+const routes = express.Router();
 
-module.exports = routes; 
+const BoxController = require("./controllers/BoxController");
+const FileController = require("./controllers/FileController");
+
+routes.get("/boxes", BoxController.index);
+routes.post("/boxes", BoxController.store);
+routes.get("/boxes/:id", BoxController.show);
+
+routes.post("/boxes/:id/files", multer(multerConfig).single("file"), FileController.store);
+
+module.exports = routes;
