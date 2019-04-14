@@ -42,4 +42,4 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "tmp")));
 // Arquivos de rotas da aplicação
 app.use(require("./routes"));
 
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
