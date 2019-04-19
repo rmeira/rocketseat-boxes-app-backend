@@ -5,12 +5,15 @@ const cors = require("cors");
 
 const app = express();
 
-app.use(cors());
+var corsOptions = {
+  origin: "*",
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-
-io.set("origins", "*:*");
 
 io.on("connection", socket => {
   socket.on("connectRoom", box => {
