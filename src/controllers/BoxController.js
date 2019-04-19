@@ -2,7 +2,7 @@ const Box = require("../models/Box");
 
 class BoxController {
   async index(req, res) {
-    return await res.send("It's work");
+    return await res.send("It's work 2");
   }
   async show(req, res) {
     const box = await Box.findById(req.params.id).populate({

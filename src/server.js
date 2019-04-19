@@ -1,19 +1,12 @@
-const express = require("express");
+const app = require("express")();
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
 
-const app = express();
-
-var corsOptions = {
-  origin: "*",
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
-
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
+
+app.use(cors());
 
 io.on("connection", socket => {
   socket.on("connectRoom", box => {
