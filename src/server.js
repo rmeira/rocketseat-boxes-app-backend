@@ -8,7 +8,9 @@ const app = express();
 app.use(cors());
 
 const server = require("http").Server(app);
-const io = require("socket.io")(server, { origins: "*:*" });
+const io = require("socket.io")(server);
+
+io.set("origins", "*:*");
 
 io.on("connection", socket => {
   socket.on("connectRoom", box => {
