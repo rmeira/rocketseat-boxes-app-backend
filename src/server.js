@@ -4,9 +4,8 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-
-const server = require("http").createServer(app);
-const io = require("socket.io")(server, { origins: "*:*" });
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
 
 app.use(cors());
 
@@ -42,4 +41,4 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "tmp")));
 // Arquivos de rotas da aplicação
 app.use(require("./routes"));
 
-app.listen(process.env.PORT || 3333);
+server.listen(process.env.PORT || 3333);
