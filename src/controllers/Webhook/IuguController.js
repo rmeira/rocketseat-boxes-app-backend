@@ -1,4 +1,5 @@
 const Iugu = require("../../models/Iugu");
+const Order = require("../../models/Order");
 const axios = require("axios");
 
 class IuguController {
@@ -15,13 +16,10 @@ class IuguController {
       }
     );
 
-    console.log(order.data);
+    await Order.create(order.data);
+    await Iugu.create(req.body);
 
-    const createOrder = await Iugu.create(order.data.items);
-
-    // Create a new iugu order status
-    const iugu = await Iugu.create(req.body);
-    return res.json(iugu, createOrder);
+    return res.json('Order created');
   }
 }
 
