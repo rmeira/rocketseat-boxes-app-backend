@@ -2,12 +2,6 @@ const Iugu = require("../../models/Iugu");
 const Order = require("../../models/Order");
 const Log = require("../../models/Log");
 const axios = require("axios");
-const auth = {
-  auth: {
-    username: process.env.IUGU_KEY,
-    password: null
-  }
-};
 
 class IuguController {
   async orderStatus(req, res) {
@@ -16,14 +10,20 @@ class IuguController {
     const order = await axios.get(
       `https://api.iugu.com/v1/invoices/${req.body.data.id}`,
       {
-        auth
+        auth: {
+          username: process.env.IUGU_KEY,
+          password: null
+        }
       }
     );
 
     const customer = await axios.get(
       `https://api.iugu.com/v1/customers/${order.data.customer_id}`,
       {
-        auth
+        auth: {
+          username: process.env.IUGU_KEY,
+          password: null
+        }
       }
     );
 

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Log = new mongoose.Schema(
   {
-      data: Object
+    data: Object
   },
   {
     timestamps: true
