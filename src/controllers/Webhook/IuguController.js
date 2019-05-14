@@ -16,6 +16,8 @@ class IuguController {
       }
     );
 
+    console.log(order.data);
+
     await Order.create(order.data.id);
     await Iugu.create(req.body);
 
