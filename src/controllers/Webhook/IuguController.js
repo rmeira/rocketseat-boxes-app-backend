@@ -17,7 +17,7 @@ class IuguController {
 
     console.log(order.data);
 
-    const createOrder = await Iugu.create(order.data);
+    const createOrder = await Iugu.create(order.data.items);
 
     // Create a new iugu order status
     const iugu = await Iugu.create(req.body);
