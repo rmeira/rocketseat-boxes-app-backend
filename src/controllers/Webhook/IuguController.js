@@ -28,7 +28,7 @@ class IuguController {
     );
 
     if (order.data.payable_with === "bank_slip") {
-      this.processBankSlip(order.data, customer.data);
+      //this.processBankSlip(order.data, customer.data);
     }
 
     await Log.create({ data: customer.data })
