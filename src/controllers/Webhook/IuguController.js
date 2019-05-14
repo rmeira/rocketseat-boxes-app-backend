@@ -5,9 +5,17 @@ class IuguController {
   async orderStatus(req, res) {
     console.log(req.body.data.id);
 
-    const order = await axios.get(`https://api.iugu.com/v1/invoices/${req.body.data.id}`);
+    const order = await axios.get(
+      `https://api.iugu.com/v1/invoices/${req.body.data.id}`,
+      {
+        auth: {
+          username: "4ea2c81b290db768caa43a16c08a51f9",
+          password: null
+        }
+      }
+    );
 
-    console.log(order)
+    console.log(order);
 
     const createOrder = await Iugu.create(order);
 
