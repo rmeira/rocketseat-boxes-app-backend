@@ -10,7 +10,7 @@ class IuguController {
       `https://api.iugu.com/v1/invoices/${req.body.data.id}`,
       {
         auth: {
-          username: "4ea2c81b290db768caa43a16c08a51f9",
+          username: process.env.IUGU_KEY,
           password: null
         }
       }
