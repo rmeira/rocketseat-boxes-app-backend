@@ -4,9 +4,11 @@ const multerConfig = require("./config/multer");
 
 const routes = express.Router();
 
+const IndexController = require("./controllers/IndexController")
 const BoxController = require("./controllers/BoxController");
 const FileController = require("./controllers/FileController");
 
+routes.get("/", IndexController.index);
 routes.get("/boxes", BoxController.index);
 routes.post("/boxes", BoxController.store);
 routes.get("/boxes/:id", BoxController.show);
