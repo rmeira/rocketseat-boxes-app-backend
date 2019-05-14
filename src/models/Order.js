@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Order = new mongoose.Schema(
   {
-    data: []
+    any: Object
   },
   {
     timestamps: true
