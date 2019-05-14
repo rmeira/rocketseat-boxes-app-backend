@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 const Order = new mongoose.Schema(
   {
-    data: {
-        type: String
-    }
-  },
-  {
     timestamps: true
   }
 );
