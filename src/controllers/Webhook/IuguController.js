@@ -1,4 +1,4 @@
-const Iugu = require("../models/Iugu");
+const Iugu = require("../../models/Iugu");
 const axios = require('axios')
 
 class IuguController {

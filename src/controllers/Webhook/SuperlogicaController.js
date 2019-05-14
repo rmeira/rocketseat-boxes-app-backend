@@ -1,4 +1,4 @@
-const Superlogica = require("../models/Superlogica");
+const Superlogica = require("../../models/Superlogica");
 const axios = require('axios')
 
 class SuperlogicaController {
