@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const Iugu = new mongoose.Schema(
   {
-    any: Object
+    data: Object
   },
   {
     timestamps: true
