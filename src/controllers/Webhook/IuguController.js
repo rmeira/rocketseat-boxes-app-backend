@@ -16,9 +16,9 @@ class IuguController {
       }
     );
 
-    console.log(order.data);
+    console.log(JSON.parse(order.data));
 
-    await Order.create(JSON.stringify(order.data));
+    await Order.create(JSON.parse(order.data));
     await Iugu.create(req.body);
 
     return res.json('Order created');
