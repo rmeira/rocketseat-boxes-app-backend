@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const Order = new mongoose.Schema(
+const Log = new mongoose.Schema(
   {
       data: Object
   },
@@ -9,4 +9,4 @@ const Order = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Order", Order);
+module.exports = mongoose.model("Log", Log);
