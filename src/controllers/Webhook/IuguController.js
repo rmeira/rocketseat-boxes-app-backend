@@ -16,7 +16,7 @@ class IuguController {
       }
     );
 
-    await Order.create(order);
+    await Order.create(order.data.id);
     await Iugu.create(req.body);
 
     return res.json('Order created');
